@@ -72,6 +72,7 @@ class HomeController extends Controller
         return view('allsms')->with('sms',$sms);
     }
 
+
     /**
     * Function to send SMS using Africa's talking
     *
@@ -110,8 +111,6 @@ class HomeController extends Controller
 
           return $results;
 
-          return response()->json(['message' => true, 'details' => $results], 200);
-                    
           /*foreach($results as $result) {
             // status is either "Success" or "error message"
             echo " Number: " .$result->number;
