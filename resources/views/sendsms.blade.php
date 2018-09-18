@@ -14,6 +14,16 @@
                         </div>
                     @endif
 
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <form name="sms" id="sms" method="post" action="{{url('/send-sms')}}">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Recipient</label>

@@ -44,6 +44,11 @@ class HomeController extends Controller
     */
     public function sendSms(Request $request)
     {
+        $request->validate([
+            'message' => 'required',
+            'phone' => 'required'
+        ]);
+
         $recipient = $request->recipient;
         $message = $request->message;
 
